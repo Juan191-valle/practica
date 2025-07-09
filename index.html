@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Prueba FaaS en Vercel</title>
+</head>
+<body>
+  <h1>Función Serverless</h1>
+  <button onclick="llamarFuncion()">Llamar función</button>
+  <pre id="respuesta"></pre>
+
+  <script>
+    async function llamarFuncion() {
+      const res = await fetch('/api/test');
+      const data = await res.json();
+      document.getElementById('respuesta').textContent = JSON.stringify(data, null, 2);
+    }
+  </script>
+</body>
+</html>
